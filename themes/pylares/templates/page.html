@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title|striptags }}{% endblock %}
+{% block body_classes %}pagina {%if page.body_classes is defined %}{{page.body_classes|striptags}}{% endif %}{%endblock%}
+
+{% block contenido %}
+<div class="contenido">
+{% if output_file != 'index.html' %}
+<h1>{{ page.title|striptags }}</h1>
+{% endif %}
+{{ page.content }}
+</div>
+
+{% endblock %}

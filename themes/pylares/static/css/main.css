@@ -1,0 +1,89 @@
+a{
+  color: #1C78C5
+}
+/* Centrar la página y limitar el ancho a 1000px */
+.contenido {
+  max-width: 63em;
+  margin: auto;
+}
+.fit .contenido{
+  max-width: 40em;
+}
+/** Centrar las imágenes **/
+.contenido img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+/** Encabezado en gris y espaciado del contenido principal **/
+#encabezado {
+  color: #444;
+  text-align: center;
+  max-width: 63em;
+  margin: 0 auto;
+  padding-bottom: 3em;
+}
+#titulo-sitio {
+  font-size: 2em;
+  margin: .67em 0;
+  font-weight: bold;
+}
+/** Pie de página extendido en toda la pantalla **/
+#pie {
+  border-top: 0.3em #A44F4F solid;
+  background: #FF7070;
+  min-height: 5em;
+  margin-top: 5em;
+}
+#pie div {
+  padding: 2em 0;
+  max-width: 63em;
+  margin: auto;
+  text-align: center;
+}
+
+/** Iconos **/
+.icono-paracaidas {
+  background: url("icons/parachute.png") no-repeat top center;
+}
+.icono-pinceles {
+  background: url("icons/brush-pencil.png") no-repeat top center;
+}
+.icono-descarga {
+  background: url("icons/download.png") no-repeat top center;
+}
+.icono-lampara {
+  background: url("icons/brightness.png") no-repeat top center;
+}
+.icono-carretilla {
+  background: url("icons/dolly.png") no-repeat top center;
+}
+.icono-capas {
+  background: url("icons/stack.png") no-repeat top center;
+}
+.icono-sobre {
+  background: url("icons/mail.png") no-repeat top center;
+}
+
+/** Estilos de la pagina principal **/
+.pagina-principal .bloque-con-imagen {
+  min-height: 6em;
+  padding-top: 12em;
+  text-align: center;
+}
+/* Separar el texto de los bordes de las cajas con imagenes */
+.pagina-principal .bloque-con-imagen p {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.margen-derecho {
+  padding-right: 1em;
+}
+.margen-izquierdo {
+  padding-left: 1em;
+}
+
+/** Estilos para la pagina de documentacion **/
+body.documentacion .pure-u-md-3-4 .contenido-documentacion {
+  padding-left: 1em;
+}

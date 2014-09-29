@@ -1,0 +1,24 @@
+{% block encabezado %}
+<div id="encabezado">
+    <div class="pure-g">
+        <div class="pure-u-1">
+            {% if output_file == 'index.html' %}
+            <h1 id='titulo-sitio'>{{ NOMBRE_DEL_SITIO }}</h1>
+            {% else %}
+            <p id='titulo-sitio'>{{ NOMBRE_DEL_SITIO }}</p>
+            {% endif %}
+            <p id='slogan-sitio'>{{ SLOGAN_DEL_SITIO }}</p>
+        </div>
+    </div>
+
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+        <ul>
+        <li{% if output_file == 'index.html' %} class="pure-menu-selected"{% endif %}><a href="{{ SITEURL }}/">Inicio</a></li>
+        {% for pagina in PAGES if pagina.en_menu == 'Si' %}
+            <li{% if pagina == page %} class="pure-menu-selected"{% endif %}><a href="{{ SITEURL }}/{{ pagina.url }}">{{ pagina.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+    <p>Este proyecto aun no está listo para ser usado en la escuela. <a href="{{ SITEURL }}/estado-del-proyecto">¿Cuándo estará listo?</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+
+    {% block purecss %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pure-min.css">
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    {%endblock%}
+
+    {% block css %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pojoaque.css">
+    {% endblock %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="{% block body_classes %}{%endblock%}">
+
+{% block encabezado %}
+{% include 'encabezado.html' %}
+{% endblock %}
+
+{% block contenido %}
+{% endblock %}
+
+{% block pie %}
+{% include 'pie.html' %}
+{% endblock %}
+
+
+{% block scripts %}
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/highlight.pack.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/animated_image.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
+
+</body>
+</html>

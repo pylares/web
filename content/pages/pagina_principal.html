@@ -1,0 +1,149 @@
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-3 bloque-con-imagen icono-paracaidas">
+        <p>Pylares hace más fácil y divertida la programación usando el lenguaje Python. <a href="/acerca-de">Acerca del proyecto.</a></p>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-3 bloque-con-imagen icono-pinceles">
+        <p>Es gratis, software libre y pensado especialmente para ser usado en las escuelas. <a href="/pylares-en-la-escuela">Pylares en la escuela.</a></p>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-3 bloque-con-imagen icono-descarga">
+        <p>¿Listo para probar Pylares? Consulta las instrucciones de instalación y <a href="/descargar">descarga Pylares.</a></p>
+    </div>
+</div>
+
+<h2>¿Qué puedo hacer con Pylares?</h2>
+
+<p>Este es un pequeño ejemplo de lo que se puede hacer usando Pylares:</p>
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-3-5">
+        <pre>
+            <code>
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+from pylares import *
+
+opciones = ['Un avión', 'Un barco', 'Una bicicleta']
+ventana = Ventana(
+  Fila(
+    Columna(
+      Etiqueta("pregunta", "¿Qué es esto?"),
+      Imagen("imagen", "bicicleta.png"),
+    ),
+    Columna(
+      BotonesDeOpcion('eleccion', opciones, "Un barco"),
+      Boton("jugar", "Elegir"),
+      Entrada("resultado", "", "Resultado")
+    )
+  )
+)
+
+def ClicEn_jugar():
+    if ventana["eleccion"].valor == 'Una bicicleta':
+        ventana["resultado"].valor = "¡Correcto!"
+    else:
+        ventana["resultado"].valor = "No, intenta de nuevo..."
+
+ventana.Dibujar()
+            </code>
+        </pre>
+    </div>
+    <div class="pure-u-1 pure-u-md-2-5">
+        <div class="margen-izquierdo">
+            <p>Así se ve el programa en funcionamiento: </p>
+            <img src="/imagenes/juego-animacion.png" class="animated-image" images="8" interval="1" />
+            <p>Pylares es un conjunto de herramientas para hacer que la programación sea mucho más sencilla y divertida.</p>
+            <p>Con Pylares puedes crear programas con interfaces gráficas usando el lenguaje Python.</p>
+        </div>
+    </div>
+</div>
+<p>Pylares simplifica algunas operaciones del lenguaje Python para que sea más accesible a estudiantes adolescentes.</p>
+<p>Muchas instrucciones de Python que están en inglés, fueron traducidas y simplificadas reduciendo de esta manera la necesidad de recordar que significan cada una de esas instrucciones.</p>
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-2">
+        <div class="margen-derecho">
+            <p>Usando únicamente Python:</p>
+                <pre>
+                    <code>
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+import random
+import os
+
+lista = ["rojo", "verde", "azul", "blanco"]
+
+valor_aleatorio = random.randrange(0, len(lista))
+color_secreto = lista[valor_aleatorio]
+
+pudo_acertar = False
+
+for i in range(10, 1, -1):
+    color = raw_input("Elige un color: ")
+    if color.lower() == color_secreto:
+        print "Excelente, adivinaste"
+        pudo_acertar = True
+        break
+    else:
+        print "Ese no es el color que pensé"
+        print "Te quedan", i, "intentos"
+        print "Presione enter para continuar..."
+        raw_input()
+        if os.name == 'posix':
+            os.system("clear")
+        else:
+            os.system("cls")
+
+if pudo_acertar == False:
+    print "Perdiste :("
+    print "El color que pensé era el:", color_secreto
+                </code>
+            </pre>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-2">
+        <div class="margen-izquierdo">
+            <p>Usando Python con Pylares:</p>
+            <pre>
+                <code>
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+from pylares import *
+
+lista = ["Rojo", "Verde", "Azul", "Blanco"]
+
+color_secreto = ElegirUnoDe(lista)
+pudo_acertar = No
+
+for i in DesdeHasta(10, 1):
+    color = Leer("Elige un color: ")
+    if Minuscula(color) == color_secreto:
+        Mostrar("Excelente, adivinaste")
+        pudo_acertar = Si
+        break
+    else:
+        Mostrar("Ese no es el color que pensé")
+        MostrarVarios("Te quedan", i, "intentos")
+        Pausa()
+        LimpiarPantalla()
+
+if pudo_acertar == No:
+    Mostrar("Perdiste :(")
+    MostrarVarios("El color que pensé era el:", color_secreto)
+                </code>
+            </pre>
+        </div>
+    </div>
+</div>
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-4 bloque-con-imagen icono-carretilla">
+        <p>Pylares abarca mucho más que código. La <strong>detección de errores</strong>, el <strong>entorno de desarrollo</strong> y la <strong>documentación</strong> fueron tenidas en cuenta también.</p>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-4 bloque-con-imagen icono-capas">
+        <p>Todo el proyecto está íntegramente documentado, para que puedas saber más sobre las partes que lo componen y como involucrarte para ayudar en algo en particular.</p>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-4 bloque-con-imagen icono-lampara">
+        <p>Diseñado teniendo en cuenta tanto a los alumnos como a los docentes por igual.</p>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-4 bloque-con-imagen icono-sobre">
+        <p>Para contactarte con nosotros.</p>
+    </div>
+</div>
+
